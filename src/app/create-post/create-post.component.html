@@ -1,35 +1,36 @@
 <ul>
-    <li><a href="#"><b style="font-size: 25px;">JASS</b></a></li>
-    <li><a href="#">Feed</a></li>
-    <li><a href="#">Videos</a></li>
-    <li style="float:right"><a class="active" href="#">Profile</a></li>
-    <li style="float:right"><a class="active" href="#">Create Post</a></li>
-    <li style="float:right"><a class="active" href="#">Logout</a></li>
-  </ul>
-  
-  <div>
-    <form action="/action_page.php">
+  <li><a href="#"><b style="font-size: 25px;">JASS</b></a></li>
+  <li><a href="#">Feed</a></li>
+  <li><a href="#">Videos</a></li>
+  <li style="float:right"><a class="active" href="#">Profile</a></li>
+  <li style="float:right"><a class="active" href="#">Create Post</a></li>
+  <li style="float:right"><a class="active" href="#">Logout</a></li>
+</ul>
+
+<div>
+  <form action="/action_page.php">
+    <div class="div1">
       <label class="font" for="title">Thread Title</label><br />
       <input type="text" id="title" name="title" placeholder="Thread Title.."><br />
-  
+
       <label class="font" for="desc">Description</label><br />
       <!-- <input type="text" id="desc" name="desc" placeholder="Description.."><br/> -->
       <textarea>Some text...</textarea><br />
-  
+
       <label class="font" for="sub">Select Subject</label><br />
       <select id="country" name="country">
         <option value="">test</option>
         <option value="">test1</option>
         <option value="">test2</option>
-      </select><br/>
-  
+      </select><br />
+
       <label class="font" for="sub">Add More</label><br />
       <label class="container1">One
-        <input type="checkbox" checked="checked">
+        <input type="checkbox" (click)="assignment_box =!assignment_box">
         <span class="checkmark"></span>
       </label>
-      <label class="container1">Two
-        <input type="checkbox">
+      <label class="container1" >Two
+        <input type="checkbox" (click)="lecture_box =!lecture_box">
         <span class="checkmark"></span>
       </label>
       <label class="container1">Three
@@ -40,32 +41,35 @@
         <input type="checkbox">
         <span class="checkmark"></span>
       </label>
-  
+      
+    </div>
+
+    <div class="div2" *ngIf="!assignment_box">
       <label class="font" for="title">Assignment Details</label><br />
-      <span class="span">Assignment Title</span><br/>
-      <input type="text" id="title" name="title" placeholder="Thread Title.."><br />
-  
-      <span class="span">Assignment Description</span><br/>
-      <input type="text" id="title" name="title" placeholder="Thread Title.."><br />
-  
-      <span class="span">Submit Link 1</span><br/>
-      <input type="text" id="title" name="title" placeholder="Thread Title.."><br />
-  
-      <span class="span">Submit Link 2</span><br/>
-      <input type="text" id="title" name="title" placeholder="Thread Title.."><br />
-  
-      <label class="font" for="title">Lecture Details</label><br />
-      <span class="span">Assignment Title</span><br/>
-      <input type="text" id="title" name="title" placeholder="Thread Title.."><br />
-  
-      <span class="span">Lecture Description</span><br/>
-      <input type="text" id="title" name="title" placeholder="Thread Title.."><br />
-  
-      <span class="span">Lecture Link 1</span><br/>
-      <input type="text" id="title" name="title" placeholder="Thread Title.."><br />
-  
-      <input type="submit" value="Submit">
-    </form>
-  </div>
-  
-  
+      <span class="span">Assignment Title</span><br />
+      <input type="text" (click)="assignment =!assignment" id="title" name="title" placeholder="Thread Title..">
+
+      <span class="span" *ngIf="!assignment">Assignment Description</span><br />
+      <input type="text" *ngIf="!assignment" id="title" name="title" placeholder="Thread Title..">
+
+      <span class="span" *ngIf="!assignment">Submit Link 1</span>
+      <input type="text" *ngIf="!assignment" id="title" name="title" placeholder="Thread Title..">
+
+      <span class="span" *ngIf="!assignment">Submit Link 2</span>
+      <input type="text" *ngIf="!assignment" id="title" name="title" placeholder="Thread Title.."><br />
+    </div>
+
+    <div class="div3" *ngIf="!lecture_box">
+      <label class="font" for="title">Lecture Details</label>
+      <span class="span">Lecture Title</span><br />
+      <input type="text" (click)="lecture =!lecture" id="title" name="title" placeholder="Thread Title..">
+      <span class="span" *ngIf="!lecture">Lecture Description</span>
+      <input type="text" *ngIf="!lecture" id="title" name="title" placeholder="Thread Title..">
+
+      <span class="span" *ngIf="!lecture">Lecture Link 1</span>
+      <input type="text" *ngIf="!lecture" id="title" name="title" placeholder="Thread Title..">
+    </div>
+    
+    <input type="submit" value="Submit">
+  </form>
+</div>

@@ -48,7 +48,6 @@ ul {
     border-radius: 4px;
     cursor: pointer;
     margin-left: 400px;
-    
   }
   
   input[type=submit]:hover {
@@ -153,3 +152,19 @@ ul {
     margin-top: 21px;
   }
   
+  .div1{
+    background-color: rgb(212, 252, 252);
+    width: 80%;
+  }
+
+  .div2{
+    background-color: rgb(193, 250, 191);
+    width: 80%;
+    margin-top: 28px;
+  }
+
+  .div3{
+    background-color: rgb(247, 205, 233);
+    width: 80%;
+    margin-top: 28px;
+  }
